@@ -1,6 +1,6 @@
 import pytest
 from Checkout import Checkout
-from main import checkout
+from methods import checkout
 
 # Fixture for base prices
 @pytest.fixture

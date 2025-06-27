@@ -36,6 +36,7 @@ coverage/
 
 # Python
 __pycache__/
+.pytest_cache
 *.py[cod]
 *.pyo
 *.pyd
