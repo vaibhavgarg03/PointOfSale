@@ -1,0 +1,15 @@
+{
+  "A": {
+    "item_name": "Apple",
+    "multi_buy_qty": 3,
+    "multiplier": 2 
+  },
+  "B": {
+    "item_name": "Banana",
+    "multi_buy_qty": 3,
+    "multi_buy_price": 100
+  },
+  "P": {
+    "item_name": "Pear"
+  }
+}
