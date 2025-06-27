@@ -1,7 +1,7 @@
 # PointOfSale
 Competency test for the Research Software Engineer role at Imperial College London.
 
-##Classes
+## Classes
 
 Checkout - 
 Item - 
