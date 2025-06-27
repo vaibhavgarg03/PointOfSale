@@ -1,8 +1,8 @@
 class Item:
     def __init__(self, item_code, quantity, price, data):
         """
-        :param item_code: str, e.g., "A"
-        :param price: int or float, base price for a single unit
+        :param item_code: string, e.g., "A"
+        :param price: int, base price for a single unit
         :param data: dict, from JSON, e.g., {
             "item_name": "Apple",
             "multi_buy_qty": 3,
