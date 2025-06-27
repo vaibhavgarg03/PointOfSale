@@ -55,10 +55,6 @@ ENV/
 *.dll
 *.exe
 
-# Git
-.git/
-.gitignore
-
 # Misc
 *.swp
 *.bak
