@@ -1,5 +1,5 @@
 import json
-from item import Item
+from Item import Item
 
 class Checkout:
     def __init__(self, prices):
@@ -26,7 +26,7 @@ class Checkout:
 
         for item_code, quantity in self.scanned_items.items():
             price = self.prices[item_code]
-            total += self.multi_buy(item_code, quantity, price).calculate_total()
+            total += self.multi_buy(item_code, quantity, price).total
 
         return(total)
     

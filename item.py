@@ -22,6 +22,9 @@ class Item:
         else:
             self.multi_buy_price = None
 
+        self.total = self.calculate_total()
+        self.discount = self.price * self.quantity - self.total
+
     def calculate_total(self):
         if self.multi_buy_qty and self.multi_buy_price:
             groups = self.quantity // self.multi_buy_qty
