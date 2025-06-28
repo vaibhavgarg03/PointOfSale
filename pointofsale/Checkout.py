@@ -1,5 +1,5 @@
 import json
-from Item import Item
+from pointofsale.Item import Item
 
 class Checkout:
     def __init__(self, prices):

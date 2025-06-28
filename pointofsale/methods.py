@@ -1,7 +1,7 @@
-from Checkout import Checkout
-from Card import Card
-from Cash import Cash
-from Receipt import Receipt
+import json
+from collections import Counter
+from pointofsale.Checkout import Checkout
+from pointofsale.Receipt import Receipt
 
 def checkout (item_codes, prices):
 
@@ -23,4 +23,14 @@ def print_receipt(item_codes, prices, payment_details):
     receipt = Receipt(items, check.total(), payment_details)
     receipt.print_to_console()
 
-print_receipt(['A', 'A', 'A', 'B', 'B', 'B', 'P'], {'A': 25, 'B': 40, 'P': 30}, {"Cash": 100})
+def sales_data(item_codes):
+    try:
+        with open("sales.json", "r") as f:
+            existing = Counter(json.load(f))
+    except FileNotFoundError:
+        existing = Counter()
+
+    updated = existing + Counter(item_codes)
+
+    with open("sales.json", "w") as f:
+        json.dump(updated, f, indent=2)

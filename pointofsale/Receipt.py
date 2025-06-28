@@ -1,5 +1,5 @@
-from Card import Card
-from Cash import Cash
+from pointofsale.Card import Card
+from pointofsale.Cash import Cash
 from datetime import datetime
 
 class Receipt:
