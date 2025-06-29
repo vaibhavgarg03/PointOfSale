@@ -1,6 +1,22 @@
 # Point of Sale System 
 A simple and modular Point of Sale (PoS) system built in Python, designed to simulate the checkout process in a supermarket. It includes billing, offers, payment handling, and basic sales tracking.
 
+## Table of Contents
+
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Modules](#modules)
+5. [pointofsale.Card](#pointofsalecard)
+6. [pointofsale.Cash](#pointofsalecash)
+7. [pointofsale.Checkout](#pointofsalecheckout)
+8. [pointofsale.Item](#pointofsaleitem)
+9. [pointofsale.Receipt](#pointofsalereceipt)
+10. [pointofsale.methods](#pointofsalemethods)
+11. [Data Files](#data-files)
+12. [Testing](#testing)
+13. [Limitations](#limitations)
+
 ## Features
 
 1. **Calculate total bill** – Automatically sums prices for scanned items.
@@ -61,6 +77,7 @@ A simple and modular Point of Sale (PoS) system built in Python, designed to sim
 - [pointofsale.methods](#pointofsalemethods): Contains essential methods to calculate the total costs, printing receipts and maintaining sales data.
 
 <a name="pointofsalecard"></a>
+
 ## pointofsale.Card
 
 Handles the payment details when the payment method is Card. Stores the card number and the name on card entered by the user and verifies the format of the details.
@@ -372,6 +389,39 @@ None
 ## Data Files
 - `inventory.json`: Contains item metadata including name and optional multibuy offer rules.
 - `sales.json`: Records the number of units sold per item code.
+
+## Testing
+
+### Running Tests with Pytest
+
+To ensure everything works as expected, you can run the tests using pytest.
+
+1. Install pytest (if you haven't already):
+   ```bash
+   pip install pytest
+   ```
+
+2. Run the tests:
+   ```bash
+   pytest
+   ```
+
+### Code Coverage
+
+You can also generate a code coverage report while running the tests with:
+
+1. Install pytest-cov (if you haven't already):
+   ```bash
+   pip install pytest-cov
+   ```
+
+2. Run the tests:
+   ```bash
+   pytest --cov=pointofsale tests/
+   ```
+
+This will display the code coverage for the module, so you can see how much of the code is covered by your tests.
+
 
 ## Limitations
 
