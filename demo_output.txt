@@ -1,0 +1,38 @@
+WELCOME!
+Scan your items one at a time.
+Enter '1' to proceed to payment.
+Scan item (or enter 1 to pay): A
+Total (£): 0.25
+Scan item (or enter 1 to pay): A
+Total (£): 0.5
+Scan item (or enter 1 to pay): A
+Total (£): 0.5
+Scan item (or enter 1 to pay): B
+Total (£): 0.9
+Scan item (or enter 1 to pay): B
+Total (£): 1.3
+Scan item (or enter 1 to pay): B
+Total (£): 1.5
+Scan item (or enter 1 to pay): P
+Total (£): 1.8
+Scan item (or enter 1 to pay): 1
+How would you like to pay (Cash/Card): Card
+Enter the card number: 1234567890123456
+Enter the name on card: Vaibhav Garg
+29/06/2025 01:34:31
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+Item Code           Name                     Quantity       Price (£)
+                                                        Discount  (£)
+A                   Apple                    3              0.75
+                                                                 -0.25
+B                   Banana                   3              1.2
+                                                                 -0.20
+P                   Pear                     1              0.3
+                                                                  0.00
+----------------------------------------------------------------------
+Total:                                                    £ 1.80
+----------------------------------------------------------------------
+Paid by Card: **** **** **** 3456
+Name on Card: Vaibhav Garg
+Thanks for shopping!

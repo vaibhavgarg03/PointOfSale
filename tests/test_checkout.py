@@ -1,3 +1,9 @@
+# This code tests the checkout method (and in turn offer and cost calculation) from methods.py
+
+__author__ = "Vaibhav Garg"
+__email__ = "vaibhav.garg.0310@gmail.com"
+
+# Import the relevant libraries
 import pytest
 from pointofsale.Checkout import Checkout
 from pointofsale.methods import checkout

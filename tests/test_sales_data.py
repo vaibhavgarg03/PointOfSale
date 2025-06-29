@@ -1,8 +1,15 @@
+# This code tests the sales_data method from methods.py.
+
+__author__ = "Vaibhav Garg"
+__email__ = "vaibhav.garg.0310@gmail.com"
+
+# Import the relevant libraries
 import json
 import pytest
-from pointofsale.methods import sales_data  # Adjust the import path if needed
+from pointofsale.methods import sales_data
 import os
 
+# Fixture to setup and cleanup sales.json for each test
 @pytest.fixture(autouse=True)
 def setup_and_cleanup():
     # Setup: create initial sales.json before each test
@@ -16,6 +23,7 @@ def setup_and_cleanup():
     if os.path.exists("sales.json"):
         os.remove("sales.json")
 
+# Test if sales_data correctly updates the sales.json file
 def test_sales_data_update():
     sales_data(['A', 'A', 'B', 'P'])
     
