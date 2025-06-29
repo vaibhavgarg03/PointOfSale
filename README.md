@@ -1,4 +1,4 @@
-# Point of Sale System
+# Point of Sale System 
 A simple and modular Point of Sale (PoS) system built in Python, designed to simulate the checkout process in a supermarket. It includes billing, offers, payment handling, and basic sales tracking.
 
 ## Features
@@ -14,30 +14,33 @@ A simple and modular Point of Sale (PoS) system built in Python, designed to sim
 ## Usage
 
 ## Modules
-- [pointofsale.Card]
-- [pointofsale.Cash]
-- [pointofsale.Receipt]
-- [pointofsale.Sales]
+- [pointofsale.Card](#pointofsalecard): Handles the payment details when the payment method is Card. Stores the card number and the name on card entered by the user and verifies the format of the details.
+- [pointofsale.Cash](#pointofsalecash): Handles the payment details when the payment method is Cash. Stores the amount entered by the user and checks it against the total amount on the bill.
+- [pointofsale.Checkout](#pointofsalecheckout):  Handles the scanning of the items and calculation of the amount due before the customer is asked for payment details.
+- [pointofsale.Item](#pointofsaleitem)
+- [pointofsale.methods](#pointofsalemethods)
+- [pointofsale.Receipt](#pointofsalereceipt)
 
-### pointofsale.Card
+<a name="pointofsalecard"></a>
+## pointofsale.Card
 
 Handles the payment details when the payment method is Card. Stores the card number and the name on card entered by the user and verifies the format of the details.
 
-#### Parameters
+### Parameters
 **`card_no`** : *int* or *str*  
 16 digit numeric card number.
 
 **`name_on_card`** : *str*  
 Alphabetical, First name, Middle name (optional) and last name (optional) separated by a space.
 
-#### Attributes
+### Attributes
 **`pointofsale.Card.card_no`** : *str*  
 16 digit numeric card number.
 
 **`pointofsale.Card.name_on_card`** : *str*  
 Alphabetical, First name, Middle name (optional) and last name (optional) separated by a space.
 
-#### Methods
+### Methods
 **`pointofsale.Card.check_details(self)`** : *str*  
 Verifies whether card number and name are valid.
 
@@ -47,33 +50,49 @@ Checks whether the card number is numeric and exactly 16 digits.
 **`pointofsale.Card._valid_name_format(self)`** : *bool*  
 Checks whether the name on card is alphabetical and contains a first name, middle name (optional) and last name (optional) separated by a space.
 
-### pointofsale.Cash
+## pointofsale.Cash
 
 Handles the payment details when the payment method is Cash. Stores the amount entered by the user and checks it against the total amount on the bill.
 
-#### Parameters
-**`amount_due`** : *int* 
+### Parameters
+**`amount_due`** : *int* <br>
 Total amount due in pence.
 
 **`amount_received`** : *int*  
 Total amount received from customer in pence.
 
-#### Attributes
-**`pointofsale.Cash.amount_due`** : *int* 
+### Attributes
+**`pointofsale.Cash.amount_due`** : *int* <br>
 Total amount due in pence.
 
 **`pointofsale.Cash.amount_received`** : *int*  
 Total amount received from customer in pence.
 
-#### Methods
+### Methods
 **`pointofsale.Cash.check_amount(self)`** : *str*  
 Compares **`self.amount_due`** and **`self.amount_received`** to calculate change or balance.
 
 
-### Checkout.py
-### Item.py
-### Receipt.py
-### methods.py
+## pointofsale.Checkout
+Handles the scanning of the items and calculation of the amount due before the customer is asked for payment details.
+
+### Parameters
+**`prices`** : *dict* <br>
+A dictionary of prices in pence. Example: {'A': 25, 'B': 40, 'P': 30}
+
+### Attributes
+**`pointofsale.Checkout.prices`** : *dict* <br>
+A dictionary of prices in pence. Example: {'A': 25, 'B': 40, 'P': 30}
+
+**`pointofsale.Checkout.scanned_items`** : *dict*  
+A dictionary of scanned items and their count. Example: {'A': 2, 'B': 3, 'P': 1}
+
+### Methods
+
+
+## pointofsale.Item
+## pointofsale.Receipt
+## pointofsale.methods
 
 ## Data Files
 ### inventory.json
