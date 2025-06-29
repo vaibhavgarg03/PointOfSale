@@ -35,6 +35,7 @@ coverage/
 *.sublime-workspace
 
 # Python
+*.egg-info/
 __pycache__/
 .pytest_cache
 *.py[cod]

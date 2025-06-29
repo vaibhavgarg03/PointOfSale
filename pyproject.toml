@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pointofsale"
+version = "1.0"
+description = "A simple and modular Point of Sale (PoS) system built in Python, designed to simulate the checkout process in a supermarket. It includes billing, offers, payment handling, and basic sales tracking."
+authors = [
+    { name = "Vaibhav Garg", email = "vaibhav.garg.0310@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+
+
+[project.urls]
+Homepage = "https://github.com/vaibhavgarg03/PointOfSale"
+
+[tool.setuptools]
+packages = ["pointofsale"]
