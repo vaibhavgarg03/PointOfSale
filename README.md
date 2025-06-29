@@ -50,6 +50,8 @@ A simple and modular Point of Sale (PoS) system built in Python, designed to sim
    Checkout.scan(item)
    ```
 
+**Note:** Please see `demo.py` and `demo_output.txt` for a more detailed demonstration.
+
 ## Modules
 - [pointofsale.Card](#pointofsalecard): Handles the payment details when the payment method is Card. Stores the card number and the name on card entered by the user and verifies the format of the details.
 - [pointofsale.Cash](#pointofsalecash): Handles the payment details when the payment method is Cash. Stores the amount entered by the user and checks it against the total amount on the bill.
