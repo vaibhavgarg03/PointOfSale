@@ -11,6 +11,17 @@ A simple and modular Point of Sale (PoS) system built in Python, designed to sim
 
 ## Installation
 
+1. Clone the repository.
+
+   ```bash
+   https://github.com/vaibhavgarg03/PointOfSale.git
+   ```
+
+2. Navigate to the relevant directory and install using:
+   ```bash
+   pip install .
+   ```
+
 ## Usage
 
 ## Modules
@@ -27,28 +38,54 @@ A simple and modular Point of Sale (PoS) system built in Python, designed to sim
 Handles the payment details when the payment method is Card. Stores the card number and the name on card entered by the user and verifies the format of the details.
 
 ### Parameters
-**`card_no`** : *int* or *str*  
+**`card_no`** : *int* or *str*  <br>
 16 digit numeric card number.
 
-**`name_on_card`** : *str*  
+
+**`name_on_card`** : *str*  <br>
 Alphabetical, First name, Middle name (optional) and last name (optional) separated by a space.
+
+---
 
 ### Attributes
-**`pointofsale.Card.card_no`** : *str*  
+**`pointofsale.Card.card_no`** : *str*  <br>
 16 digit numeric card number.
 
-**`pointofsale.Card.name_on_card`** : *str*  
+**`pointofsale.Card.name_on_card`** : *str*  <br>
 Alphabetical, First name, Middle name (optional) and last name (optional) separated by a space.
 
+---
+
 ### Methods
-**`pointofsale.Card.check_details(self)`** : *str*  
+**`pointofsale.Card.check_details()`** : *str*  <br>
 Verifies whether card number and name are valid.
 
-**`pointofsale.Card._valid_card_number(self)`** : *bool*  
+#### Parameters
+None
+
+#### Returns
+
+---
+
+**`pointofsale.Card._valid_card_number()`** : *bool* <br>
+_This is a private/internal method._  
 Checks whether the card number is numeric and exactly 16 digits.
 
-**`pointofsale.Card._valid_name_format(self)`** : *bool*  
+#### Parameters
+None
+
+#### Returns
+
+---
+
+**`pointofsale.Card._valid_name_format()`** : *bool* <br>
+_This is a private/internal method._  
 Checks whether the name on card is alphabetical and contains a first name, middle name (optional) and last name (optional) separated by a space.
+
+#### Parameters
+None
+
+#### Returns
 
 ## pointofsale.Cash
 
@@ -58,20 +95,28 @@ Handles the payment details when the payment method is Cash. Stores the amount e
 **`amount_due`** : *int* <br>
 Total amount due in pence.
 
-**`amount_received`** : *int*  
+**`amount_received`** : *int*  <br>
 Total amount received from customer in pence.
+
+---
 
 ### Attributes
 **`pointofsale.Cash.amount_due`** : *int* <br>
 Total amount due in pence.
 
-**`pointofsale.Cash.amount_received`** : *int*  
+**`pointofsale.Cash.amount_received`** : *int*  <br>
 Total amount received from customer in pence.
 
-### Methods
-**`pointofsale.Cash.check_amount(self)`** : *str*  
-Compares **`self.amount_due`** and **`self.amount_received`** to calculate change or balance.
+---
 
+### Methods
+**`pointofsale.Cash.check_amount()`** : *str*  <br>
+Compares the amount due and the amount received to calculate change or balance.
+
+#### Parameters
+None
+
+#### Returns
 
 ## pointofsale.Checkout
 Handles the scanning of the items and calculation of the amount due before the customer is asked for payment details.
@@ -80,15 +125,59 @@ Handles the scanning of the items and calculation of the amount due before the c
 **`prices`** : *dict* <br>
 A dictionary of prices in pence. Example: {'A': 25, 'B': 40, 'P': 30}
 
+---
+
 ### Attributes
 **`pointofsale.Checkout.prices`** : *dict* <br>
 A dictionary of prices in pence. Example: {'A': 25, 'B': 40, 'P': 30}
 
-**`pointofsale.Checkout.scanned_items`** : *dict*  
+**`pointofsale.Checkout.scanned_items`** : *dict*  <br>
 A dictionary of scanned items and their count. Example: {'A': 2, 'B': 3, 'P': 1}
+
+---
 
 ### Methods
 
+**`pointofsale.Checkout.scan(item_code)`**: *None* <br>
+Registers an item that has been scanned.
+
+#### Parameters
+**`item_code`**: *string* <br>
+Item code for individual item. Example: "A" for Apple.
+
+#### Returns
+
+None
+
+--- 
+
+**`pointofsale.Checkout.total()`**: *int* <br>
+Calculates the total cost of all scanned items.
+
+#### Parameters
+None
+
+#### Returns
+
+---
+
+**`pointofsale.Checkout.item_details(item_code, quantity, price)`**: *pointofsale.Item.Item* <br>
+Gathers details for an invidiual item including the multibuy offer and the updated price.
+
+#### Parameters
+**`item_code`**: *string* <br>
+Item code for individual item. Example: "A" for Apple.
+
+**`quantity`**: *int* <br>
+Quantity of an individual item.
+
+**`price`**: *int* <br>
+Price in pence for an individual item.
+
+#### Returns
+
+**`item`**: *pointofsale.Item.Item*
+Object containing details for an invidiual item including the multibuy offer and the updated price.
 
 ## pointofsale.Item
 ## pointofsale.Receipt
