@@ -23,7 +23,11 @@ def invalid_card_no():
 
 @pytest.fixture
 def invalid_name():
-    return {"Card": [1234567890123456, "Vaibhav123"]} # Invalid Name on card
+    return {"Card": [1234567890123456, "Vaibhav123"]} # Invalid Name on card (Alphanumeric)
+
+@pytest.fixture
+def invalid_name2():
+    return {"Card": [1234567890123456, "Vaibhav G A Rg"]} # Invalid Name on card (Too long)
 
 @pytest.fixture
 def exact_cash():
@@ -56,8 +60,15 @@ def test_receipt_with_invalid_card_no(capfd, invalid_card_no):
     assert "Transaction failed!" in out
 
 def test_receipt_with_invalid_name(capfd, invalid_name):
-    # Test receipt generation with invalid name
+    # Test receipt generation with invalid name (alphanumeric name)
     print_receipt(item_codes, prices, invalid_name)
+    out, _ = capfd.readouterr()
+    assert "Invalid Card" in out
+    assert "Transaction failed!" in out
+
+def test_receipt_with_invalid_name2(capfd, invalid_name2):
+    # Test receipt generation with invalid name (more than three parts)
+    print_receipt(item_codes, prices, invalid_name2)
     out, _ = capfd.readouterr()
     assert "Invalid Card" in out
     assert "Transaction failed!" in out

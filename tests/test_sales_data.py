@@ -33,3 +33,15 @@ def test_sales_data_update():
     expected = {"A": 4, "B": 2, "P": 3}
     assert updated == expected
 
+# Test if sales_data creates a new sales.json file
+def test_sales_data_creates_new_file(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)  # Switch to a clean temp directory
+    assert not os.path.exists("sales.json")  # Confirm it doesn't exist
+
+    sales_data(['A', 'B', 'P'])  # Run function (should hit except block)
+
+    with open("sales.json") as f:
+        updated = json.load(f)
+
+    expected = {"A": 1, "B": 1, "P": 1}
+    assert updated == expected
